@@ -1,97 +1,99 @@
-import structuralImg from "@/assets/type-structural.jpg";
 import visualImg from "@/assets/type-visual.jpg";
+import structuralImg from "@/assets/type-structural.jpg";
 import citizenImg from "@/assets/type-citizen.jpg";
 import psychImg from "@/assets/type-psychological.jpg";
 import institutionalImg from "@/assets/type-institutional.jpg";
 import culturalImg from "@/assets/type-cultural.jpg";
+import heroImg from "@/assets/hero-watercolor.jpg";
+import { Eye, Building, AlertTriangle, Users, Brain, Headphones, MessageCircle } from "lucide-react";
 
-const types = [
-  {
-    title: "Perturbanismo estructural",
-    img: structuralImg,
-    recognize: "Muros que invaden calles, ampliaciones sin permiso, edificaciones que ignoran retiros.",
-    effect: "Reduce espacio público, genera inseguridad peatonal, fragmenta la trama urbana.",
-    symbol: "El muro que se come la vereda.",
-  },
-  {
-    title: "Perturbanismo visual",
-    img: visualImg,
-    recognize: "Maraña de cables aéreos, publicidad invasiva, fachadas sin armonía cromática.",
-    effect: "Contaminación visual permanente, pérdida del paisaje, fatiga sensorial.",
-    symbol: "El cielo cubierto de cables.",
-  },
-  {
-    title: "Perturbanismo ciudadano",
-    img: citizenImg,
-    recognize: "Basura en la vía pública, grafitis sin criterio, vehículos en veredas, comercio informal invadiendo pasos.",
-    effect: "Deterioro de la convivencia, sensación de abandono, normalización del desorden.",
-    symbol: "La vereda convertida en depósito.",
-    subnote: "Incluye los actos pequeños: la maceta que bloquea, el cartel casero, la reja improvisada. Cada uno parece insignificante, pero la suma transforma el paisaje.",
-  },
-  {
-    title: "Perturbanismo psicológico",
-    img: psychImg,
-    recognize: "Sensación constante de caos, estrés al caminar, incapacidad de relajarse en el espacio público.",
-    effect: "Ansiedad urbana, desapego del ciudadano con su ciudad, migración emocional.",
-    symbol: "La persona que cruza la calle con los ojos cerrados.",
-  },
-  {
-    title: "Perturbanismo institucional",
-    img: institutionalImg,
-    recognize: "Obras públicas inconclusas, señalización contradictoria, permisos irregulares, cableado sin regulación.",
-    effect: "Desconfianza en las instituciones, impunidad visual, perpetuación del desorden.",
-    symbol: "La obra abandonada con el cartel de \"próximamente\".",
-  },
-  {
-    title: "Perturbanismo cultural",
-    img: culturalImg,
-    recognize: "Monumentos vandalizados, indiferencia ante patrimonio, pérdida de identidad arquitectónica local.",
-    effect: "Erosión de memoria colectiva, homogeneización del paisaje, desconexión con la historia.",
-    symbol: "La casona colonial convertida en estacionamiento.",
-  },
+const topCards = [
+  { icon: Building, title: "Desorden funcional", desc: "Invasión y disfunción del espacio público" },
+  { icon: AlertTriangle, title: "Normalización del caos", desc: "El desorden que deja de cuestionarse" },
+  { icon: Users, title: "Responsabilidad compartida", desc: "El caos es responsabilidad de todos" },
+  { icon: MessageCircle, title: "Distorsión mental", desc: "Entorno caótico y fragmentación" },
+];
+
+const bottomCards = [
+  { img: structuralImg, title: "Distorsión mental", desc: "Entorno caótico y fragmentación mental" },
+  { img: institutionalImg, title: "Pérdida de identidad", desc: "Paisaje urbano sin memoria ni carácter" },
+  { img: culturalImg, icon: Headphones, title: "La música del perturbanismo", desc: "Ruido constante y saturación sonora." },
 ];
 
 const TypesSection = () => (
   <section id="tipos" className="py-16 md:py-24">
     <div className="max-w-6xl mx-auto px-6">
-      <h2 className="font-serif text-3xl md:text-5xl font-bold text-foreground text-center mb-4">
-        TIPOS DE PERTURBANISMO
+      {/* Header */}
+      <h2 className="font-serif text-3xl md:text-5xl font-bold text-foreground text-center mb-3">
+        Tipos de Perturbanismo
       </h2>
-      <p className="text-grey-text text-lg text-center max-w-3xl mx-auto mb-14 leading-relaxed">
-        El perturbanismo no es un fenómeno monolítico. Se manifiesta en múltiples dimensiones que se superponen y refuerzan mutuamente. Estos son sus tipos principales:
+      <p className="font-serif italic text-lg text-muted-foreground text-center mb-4">
+        Las siete manifestaciones del caos urbano
+      </p>
+      {/* Gold separator */}
+      <div className="flex justify-center mb-8">
+        <div className="w-16 h-[2px] bg-foreground/30 rounded-full relative">
+          <div className="absolute -bottom-1 left-1/2 -translate-x-1/2 w-2 h-2 rounded-full bg-foreground/40" />
+        </div>
+      </div>
+      <p className="text-grey-text text-base md:text-lg text-center max-w-3xl mx-auto mb-12 leading-relaxed">
+        El perturbanismo se manifiesta de diversas formas en la ciudad. Estas son
+        sus siete distorsiones y la responsabilidad colectiva.
       </p>
 
-      <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-        {types.map((t) => (
+      {/* Bento grid layout matching reference */}
+      <div className="grid grid-cols-1 md:grid-cols-5 gap-4 md:gap-5">
+        {/* Left column - large watercolor card spanning 2 rows */}
+        <div className="md:col-span-1 md:row-span-2 relative rounded-lg overflow-hidden min-h-[300px] md:min-h-0 border border-border shadow-sm">
+          <img src={heroImg} alt="Distorsión visual" className="absolute inset-0 w-full h-full object-cover" />
+          <div className="absolute inset-0 bg-gradient-to-t from-foreground/70 via-transparent to-transparent" />
+          <div className="absolute bottom-0 left-0 right-0 p-4">
+            <Eye className="w-8 h-8 text-primary mb-2" />
+            <h3 className="font-serif font-bold text-primary-foreground text-lg">Distorsión visual</h3>
+            <p className="text-primary-foreground/80 text-sm mt-1">Caos acumulado en el entorno urbano</p>
+            <a href="#" className="text-primary text-sm font-semibold mt-2 inline-block hover:underline">Leer más</a>
+          </div>
+        </div>
+
+        {/* Top row - 4 icon cards */}
+        {topCards.map((card) => (
           <div
-            key={t.title}
-            className="bg-card border border-primary/20 rounded-lg overflow-hidden shadow-sm hover:shadow-lg transition-shadow"
+            key={card.title}
+            className="bg-secondary/60 border border-border rounded-lg p-5 text-center shadow-sm hover:shadow-md transition-shadow"
           >
-            <img src={t.img} alt={t.title} className="w-full h-48 object-cover" loading="lazy" />
-            <div className="p-6">
-              <h3 className="font-serif text-xl font-bold text-primary mb-4">{t.title}</h3>
-              <div className="space-y-3 text-sm text-grey-text">
-                <p>
-                  <span className="font-semibold text-foreground">Se reconoce por: </span>
-                  {t.recognize}
-                </p>
-                <p>
-                  <span className="font-semibold text-foreground">Efecto: </span>
-                  {t.effect}
-                </p>
-                <p>
-                  <span className="font-semibold text-foreground">Símbolo: </span>
-                  <em className="text-primary">{t.symbol}</em>
-                </p>
-                {t.subnote && (
-                  <p className="text-xs italic text-grey-light border-t border-border pt-3 mt-3">
-                    {t.subnote}
-                  </p>
-                )}
-              </div>
+            <card.icon className="w-9 h-9 text-foreground mx-auto mb-3" />
+            <h3 className="font-serif font-bold text-sm text-foreground mb-1">{card.title}</h3>
+            <p className="text-xs text-grey-light leading-snug mb-3">{card.desc}</p>
+            <a href="#" className="text-primary text-xs font-semibold hover:underline">Leer más</a>
+          </div>
+        ))}
+
+        {/* Bottom row - 3 image cards + 1 music card */}
+        {bottomCards.map((card) => (
+          <div
+            key={card.title}
+            className="relative rounded-lg overflow-hidden border border-border shadow-sm min-h-[200px]"
+          >
+            <img src={card.img} alt={card.title} className="absolute inset-0 w-full h-full object-cover" loading="lazy" />
+            <div className="absolute inset-0 bg-gradient-to-t from-foreground/70 via-foreground/20 to-transparent" />
+            <div className="absolute bottom-0 left-0 right-0 p-4">
+              {card.icon && <card.icon className="w-7 h-7 text-primary mb-1" />}
+              <h3 className="font-serif font-bold text-primary-foreground text-sm">{card.title}</h3>
+              <p className="text-primary-foreground/80 text-xs mt-1">{card.desc}</p>
+              <a href="#" className="text-primary text-xs font-semibold mt-2 inline-block hover:underline">Leer más</a>
             </div>
           </div>
         ))}
+
+        {/* Last card with CTA */}
+        <div className="bg-secondary/40 border border-border rounded-lg p-5 flex flex-col items-center justify-center text-center">
+          <a
+            href="#galeria"
+            className="inline-block border-2 border-primary text-primary font-serif font-bold text-xs tracking-widest px-6 py-2.5 hover:bg-primary hover:text-primary-foreground transition-colors uppercase"
+          >
+            VER EJEMPLOS
+          </a>
+        </div>
       </div>
     </div>
   </section>
