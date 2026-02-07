@@ -37,11 +37,11 @@ const IntroSection = () => {
           <h2 className="font-serif text-5xl md:text-6xl text-slate-900 mb-4">
             ¿Qué es el perturbanismo?
           </h2>
-          <p className="font-serif italic text-lg md:text-xl text-[#947454] max-w-2xl px-4">
+          <p className="font-serif italic text-lg md:text-xl text-[#C41E3A] max-w-2xl px-4">
             La distorsión del entorno urbano que todos ven, <br className="hidden md:block" />
             pero nadie había definido.
           </p>
-          <div className="flex items-center gap-2 text-[#947454] opacity-50 mt-6 mb-12">
+          <div className="flex items-center gap-2 text-[#C41E3A] opacity-50 mt-6 mb-12">
             <span className="h-[1px] w-12 bg-current" />
             <span className="w-2 h-2 rounded-full bg-current" />
             <span className="h-[1px] w-12 bg-current" />

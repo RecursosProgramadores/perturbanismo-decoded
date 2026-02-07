@@ -28,7 +28,7 @@ const MusicSection = () => (
           <h2 className="font-serif text-3xl md:text-4xl font-bold text-foreground mb-2 flex items-center gap-3">
             La música del perturbanismo 🎧
           </h2>
-          <p className="font-serif italic text-lg text-muted-foreground mb-4">
+          <p className="font-serif italic text-lg text-[#C41E3A] mb-4">
             El ruido como desorden, saturación y síntoma urbano
           </p>
 

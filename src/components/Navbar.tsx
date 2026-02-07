@@ -4,13 +4,13 @@ import { Search, Menu, X } from "lucide-react";
 const NAV_ITEMS = [
   { label: "INICIO", href: "#inicio" },
   { label: "QUÉ ES", href: "#que-es" },
-  { label: "TIPOS", href: "#tipos" },
   { label: "GALERÍA", href: "#galeria" },
   { label: "BLOG", href: "#blog" },
   { label: "EL LIBRO", href: "#libro" },
   { label: "LA MÚSICA", href: "#musica" },
   { label: "AUTORA", href: "#autora" },
 ];
+
 
 const Logo = () => (
   <div className="flex items-center gap-3">

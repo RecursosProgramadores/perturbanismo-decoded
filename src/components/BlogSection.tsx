@@ -52,10 +52,10 @@ const BlogSection = () => {
                     <h2 className="font-serif text-5xl md:text-6xl text-slate-900 mb-4 whitespace-nowrap">
                         Blog de Perturbanismo
                     </h2>
-                    <p className="font-serif italic text-lg md:text-xl text-[#947454] max-w-2xl px-4">
+                    <p className="font-serif italic text-lg md:text-xl text-[#C41E3A] max-w-2xl px-4">
                         Diagnósticos, análisis y reflexiones sobre la ciudad
                     </p>
-                    <div className="flex items-center gap-2 text-[#947454] opacity-50 mt-6 mb-12">
+                    <div className="flex items-center gap-2 text-[#C41E3A] opacity-50 mt-6 mb-12">
                         <span className="h-[1px] w-12 bg-current" />
                         <span className="w-2 h-2 rounded-full bg-current" />
                         <span className="h-[1px] w-12 bg-current" />
@@ -70,7 +70,7 @@ const BlogSection = () => {
                     <h3 className="font-serif text-3xl md:text-4xl text-slate-900 mb-4">
                         Blog de Perturbanismo
                     </h3>
-                    <div className="flex items-center gap-2 text-[#947454] opacity-30">
+                    <div className="flex items-center gap-2 text-[#C41E3A] opacity-30">
                         <span className="h-[1px] w-12 bg-current" />
                         <span className="w-1.5 h-1.5 rounded-full bg-current" />
                         <span className="h-[1px] w-12 bg-current" />
@@ -121,7 +121,7 @@ const BlogSection = () => {
                     {/* Sidebar: DESTACADO */}
                     <aside className="lg:w-[25%] sticky top-24">
                         <div className="border border-[#2d1b11]/10 p-8 flex flex-col items-center bg-white/30 backdrop-blur-sm rounded-sm">
-                            <span className="font-sans text-[10px] font-black text-[#947454] uppercase tracking-[0.3em] mb-8">
+                            <span className="font-sans text-[10px] font-black text-[#C41E3A] uppercase tracking-[0.3em] mb-8">
                                 DESTACADO
                             </span>
 

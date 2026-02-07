@@ -1,5 +1,6 @@
 import React from 'react';
 import { Mail, MapPin, Globe, Instagram, Facebook } from 'lucide-react';
+import snopi from "../assets/snopi.png";
 
 const ContactSection = () => {
     return (
@@ -98,21 +99,21 @@ const ContactSection = () => {
                         </div>
 
                         {/* Illustration Area */}
-                        <div className="relative mt-20 md:mt-0 flex justify-end items-end">
-                            {/* Snoopy Placeholder Illustration */}
-                            <div className="relative w-64 h-64 flex items-end justify-end">
-                                {/* Background Shadow Cityscape (SVG Filter or faint lines) */}
-                                <svg className="absolute bottom-4 right-0 w-full h-4/5 opacity-10 pointer-events-none" viewBox="0 0 200 150">
+                        <div className="relative mt-20 md:mt-0 flex justify-end items-end group">
+                            <div className="relative w-72 h-72 flex items-end justify-end">
+                                {/* Background Shadow Cityscape */}
+                                <svg className="absolute bottom-4 right-0 w-full h-4/5 opacity-[0.15] pointer-events-none transition-opacity duration-500 group-hover:opacity-25" viewBox="0 0 200 150">
                                     <path d="M0 150 L0 120 L20 120 L20 100 L40 100 L40 130 L60 130 L60 90 L80 90 L80 140 L120 140 L120 110 L150 110 L150 150 Z" fill="currentColor" />
                                 </svg>
 
-                                {/* Comic Character Placeholder (A simple representation until GenAI is back) */}
-                                <div className="relative z-10 w-48 h-48 flex items-center justify-center border-2 border-black border-dashed rounded-lg bg-white/50">
-                                    <div className="text-center text-[10px] font-sans font-bold uppercase text-gray-400 p-4">
-                                        Ilustración: Snoopy Peruano con Bigote junto a Buzón Rojo
-                                        <br />(Próximamente)
-                                    </div>
-                                </div>
+                                {/* Glow Effect */}
+                                <div className="absolute inset-0 bg-primary/5 rounded-full blur-3xl opacity-0 group-hover:opacity-100 transition-opacity duration-700"></div>
+
+                                <img
+                                    src={snopi}
+                                    alt="Snoopy"
+                                    className="relative z-10 w-64 h-auto object-contain drop-shadow-[10px_10px_0px_rgba(0,0,0,0.05)] group-hover:drop-shadow-[15px_15px_0px_rgba(196,30,58,0.1)] transition-all duration-300 group-hover:-translate-y-2"
+                                />
                             </div>
                         </div>
                     </div>

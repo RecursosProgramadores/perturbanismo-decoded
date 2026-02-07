@@ -15,7 +15,7 @@ const HeroSection = () => {
       </div>
 
       {/* Main Content Overlay */}
-      <div className="relative z-10 w-full max-w-5xl px-6 flex flex-col items-center text-center">
+      <div className="relative z-10 w-full max-w-5xl px-6 pt-32 md:pt-40 flex flex-col items-center text-center">
 
         {/* Central Symbol (Prohibited P) */}
         <div className="mb-10 group cursor-default">
@@ -29,7 +29,7 @@ const HeroSection = () => {
         {/* Brand Name */}
         <div className="mb-4">
           <span className="font-serif text-xl md:text-2xl tracking-[0.3em] text-white uppercase drop-shadow-md">
-            PERTURBANISMO.COM
+            PERTURBANISMO
           </span>
         </div>
 

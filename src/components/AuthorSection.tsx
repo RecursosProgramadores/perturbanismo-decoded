@@ -24,11 +24,11 @@ const AuthorSection = () => {
                             <h3 className="font-serif text-2xl md:text-3xl text-slate-900 leading-tight">
                                 Alejandra Pastor Peralta
                             </h3>
-                            <p className="font-serif italic text-[#B8860B] text-sm md:text-base">
+                            <p className="font-serif italic text-[#C41E3A] text-sm md:text-base">
                                 Arquitecta creadora del concepto del Perturbanismo
                             </p>
                         </div>
-                        <div className="flex items-center gap-2 text-[#947454] opacity-40 pt-4">
+                        <div className="flex items-center gap-2 text-[#C41E3A] opacity-40 pt-4">
                             <span className="h-[1px] w-12 bg-current" />
                             <span className="w-1.5 h-1.5 rounded-full bg-current" />
                             <span className="h-[1px] w-12 bg-current" />
