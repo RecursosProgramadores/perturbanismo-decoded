@@ -1,34 +1,48 @@
 import { useState } from "react";
 import { Search, Menu, X } from "lucide-react";
+import { Link, useLocation } from "react-router-dom";
+import logoImg from "@/assets/logos/logo.jpeg";
 
 const NAV_ITEMS = [
-  { label: "INICIO", href: "#inicio" },
-  { label: "QUÉ ES", href: "#que-es" },
-  { label: "GALERÍA", href: "#galeria" },
-  { label: "BLOG", href: "#blog" },
-  { label: "EL LIBRO", href: "#libro" },
-  { label: "LA MÚSICA", href: "#musica" },
-  { label: "AUTORA", href: "#autora" },
+  { label: "INICIO", href: "/#inicio" },
+  { label: "QUÉ ES", href: "/#que-es" },
+  { label: "GALERÍA", href: "/#galeria" },
+  { label: "BLOG", href: "/#blog" },
+  { label: "EL LIBRO", href: "/libro" },
+  { label: "LA MÚSICA", href: "/#musica" },
+  { label: "AUTORA", href: "/autora" },
 ];
 
 
 const Logo = () => (
-  <div className="flex items-center gap-3">
-    <div className="relative w-10 h-10">
-      <svg viewBox="0 0 40 40" className="w-full h-full">
-        <circle cx="20" cy="20" r="18" fill="white" stroke="hsl(350, 73%, 44%)" strokeWidth="3" />
-        <text x="20" y="26" textAnchor="middle" fontSize="20" fontWeight="bold" fontFamily="Arial, sans-serif" fill="black">P</text>
-        <line x1="8" y1="32" x2="32" y2="8" stroke="hsl(350, 73%, 44%)" strokeWidth="3.5" strokeLinecap="round" />
-      </svg>
+  <Link to="/" className="flex items-center gap-4 group">
+    <div className="relative w-12 h-12 overflow-hidden rounded-sm">
+      <img
+        src={logoImg}
+        alt="Perturbanismo Logo"
+        className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
+      />
     </div>
-    <span className="font-serif text-navbar-foreground font-bold text-lg hidden sm:block tracking-wide">
+    <span className="font-serif text-navbar-foreground font-bold text-xl hidden sm:block tracking-wider group-hover:text-primary transition-colors uppercase">
       PERTURBANISMO
     </span>
-  </div>
+  </Link>
 );
 
 const Navbar = () => {
   const [open, setOpen] = useState(false);
+  const location = useLocation();
+
+  const handleLinkClick = (href: string) => {
+    setOpen(false);
+    if (href.startsWith("/#") && location.pathname === "/") {
+      const id = href.split("#")[1];
+      const element = document.getElementById(id);
+      if (element) {
+        element.scrollIntoView({ behavior: "smooth" });
+      }
+    }
+  };
 
   return (
     <nav className="fixed top-0 left-0 right-0 z-50 bg-navbar">
@@ -39,12 +53,27 @@ const Navbar = () => {
         <ul className="hidden lg:flex items-center gap-6">
           {NAV_ITEMS.map((item) => (
             <li key={item.href}>
-              <a
-                href={item.href}
-                className="text-navbar-foreground text-sm font-sans font-medium tracking-wider hover:text-primary transition-colors"
-              >
-                {item.label}
-              </a>
+              {item.href.startsWith("/#") ? (
+                <a
+                  href={item.href}
+                  onClick={(e) => {
+                    if (location.pathname === "/") {
+                      e.preventDefault();
+                      handleLinkClick(item.href);
+                    }
+                  }}
+                  className="text-navbar-foreground text-sm font-sans font-medium tracking-wider hover:text-primary transition-colors"
+                >
+                  {item.label}
+                </a>
+              ) : (
+                <Link
+                  to={item.href}
+                  className="text-navbar-foreground text-sm font-sans font-medium tracking-wider hover:text-primary transition-colors"
+                >
+                  {item.label}
+                </Link>
+              )}
             </li>
           ))}
         </ul>
@@ -65,17 +94,34 @@ const Navbar = () => {
 
       {/* Mobile menu */}
       {open && (
-        <div className="lg:hidden bg-navbar border-t border-muted-foreground/20 px-6 pb-6">
+        <div className="lg:hidden bg-navbar border-t border-muted-foreground/20 px-6 pb-6 shadow-xl">
           <ul className="flex flex-col gap-4 pt-4">
             {NAV_ITEMS.map((item) => (
               <li key={item.href}>
-                <a
-                  href={item.href}
-                  className="text-navbar-foreground text-base font-sans font-medium tracking-wider hover:text-primary transition-colors"
-                  onClick={() => setOpen(false)}
-                >
-                  {item.label}
-                </a>
+                {item.href.startsWith("/#") ? (
+                  <a
+                    href={item.href}
+                    onClick={(e) => {
+                      if (location.pathname === "/") {
+                        e.preventDefault();
+                        handleLinkClick(item.href);
+                      } else {
+                        setOpen(false);
+                      }
+                    }}
+                    className="text-navbar-foreground text-base font-sans font-medium tracking-wider hover:text-primary transition-colors block py-2"
+                  >
+                    {item.label}
+                  </a>
+                ) : (
+                  <Link
+                    to={item.href}
+                    onClick={() => setOpen(false)}
+                    className="text-navbar-foreground text-base font-sans font-medium tracking-wider hover:text-primary transition-colors block py-2"
+                  >
+                    {item.label}
+                  </Link>
+                )}
               </li>
             ))}
           </ul>

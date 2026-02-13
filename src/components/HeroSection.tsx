@@ -1,4 +1,5 @@
-import heroImg from "@/assets/hero-watercolor.jpg";
+import heroImg from "@/assets/hero.png";
+import logoImg from "@/assets/logos/logo.jpeg";
 
 const HeroSection = () => {
   return (
@@ -17,12 +18,14 @@ const HeroSection = () => {
       {/* Main Content Overlay */}
       <div className="relative z-10 w-full max-w-5xl px-6 pt-32 md:pt-40 flex flex-col items-center text-center">
 
-        {/* Central Symbol (Prohibited P) */}
+        {/* Central Logo */}
         <div className="mb-10 group cursor-default">
-          <div className="w-24 h-24 md:w-32 md:h-32 rounded-full bg-[#C41E3A] border-[6px] md:border-[10px] border-white flex items-center justify-center relative shadow-2xl">
-            <span className="text-white font-serif font-black text-5xl md:text-7xl mb-1">P</span>
-            {/* Diagonal Slash - Cross out effect */}
-            <div className="absolute w-[110%] h-[15%] bg-[#C41E3A] rounded-full -rotate-45 border-y-2 border-white shadow-md" />
+          <div className="w-20 h-20 md:w-28 md:h-28 rounded-full bg-white border-[6px] md:border-[8px] border-[#C41E3A] flex items-center justify-center relative shadow-2xl overflow-hidden">
+            <img
+              src={logoImg}
+              alt="Logo Central"
+              className="w-full h-full object-cover"
+            />
           </div>
         </div>
 
@@ -40,25 +43,27 @@ const HeroSection = () => {
           se puede cambiar.
         </h1>
 
-        {/* CTA Button */}
-        <a
-          href="#manifiesto"
-          className="bg-white text-black font-sans font-bold py-4 px-12 border border-slate-200 hover:bg-slate-50 transition-all uppercase tracking-widest text-xs shadow-xl mb-12"
-        >
-          EXPLORA EL MANIFIESTO
-        </a>
+        {/* CTA Button & Labels at the same height */}
+        <div className="w-full relative flex items-center justify-center mb-24 mt-8 px-10 md:px-16">
+          <span className="absolute left-0 text-white font-sans font-bold text-sm md:text-base uppercase tracking-widest drop-shadow-[0_2px_4px_rgba(0,0,0,0.8)] hidden md:block">
+            CON PERTURBANISMO
+          </span>
 
-        {/* Bottom Labels */}
-        <div className="absolute bottom-8 left-0 w-full flex justify-between px-8 md:px-12 pointer-events-none">
-          <div className="flex flex-col items-start">
-            <span className="text-white text-[10px] md:text-xs font-sans tracking-[0.2em] font-bold uppercase py-1">
-              CON PERTURBANISMO
-            </span>
-          </div>
-          <div className="flex flex-col items-end">
-            <span className="text-white text-[10px] md:text-xs font-sans tracking-[0.2em] font-bold uppercase py-1">
-              SIN PERTURBANISMO
-            </span>
+          <a
+            href="#manifiesto"
+            className="bg-white text-black font-sans font-bold py-4 px-12 border border-slate-200 hover:bg-slate-50 transition-all uppercase tracking-widest text-xs shadow-xl"
+          >
+            EXPLORA EL MANIFIESTO
+          </a>
+
+          <span className="absolute right-0 text-white font-sans font-bold text-sm md:text-base uppercase tracking-widest drop-shadow-[0_2px_4px_rgba(0,0,0,0.8)] hidden md:block">
+            SIN PERTURBANISMO
+          </span>
+
+          {/* Mobile Labels */}
+          <div className="absolute -bottom-10 left-0 w-full flex justify-between md:hidden px-4">
+            <span className="text-white font-sans font-bold text-xs uppercase tracking-widest drop-shadow-[0_2px_2px_rgba(0,0,0,0.8)]">CON</span>
+            <span className="text-white font-sans font-bold text-xs uppercase tracking-widest drop-shadow-[0_2px_2px_rgba(0,0,0,0.8)]">SIN</span>
           </div>
         </div>
 
