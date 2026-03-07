@@ -4,12 +4,12 @@ import { Link, useLocation } from "react-router-dom";
 import logoImg from "@/assets/logos/logo.jpeg";
 
 const NAV_ITEMS = [
-  { label: "INICIO", href: "/#inicio" },
-  { label: "QUÉ ES", href: "/#que-es" },
-  { label: "GALERÍA", href: "/#galeria" },
-  { label: "BLOG", href: "/#blog" },
+  { label: "INICIO", href: "/" },
+  { label: "TIPOS DE PERTURBANISMO", href: "/tipos" },
+  { label: "GALERÍA", href: "/galeria" },
+  { label: "BLOG", href: "/blog" },
   { label: "EL LIBRO", href: "/libro" },
-  { label: "LA MÚSICA", href: "/#musica" },
+  { label: "LA MÚSICA", href: "/musica" },
   { label: "AUTORA", href: "/autora" },
 ];
 
@@ -79,9 +79,6 @@ const Navbar = () => {
         </ul>
 
         <div className="flex items-center gap-4">
-          <button aria-label="Buscar" className="text-navbar-foreground hover:text-primary transition-colors">
-            <Search className="w-5 h-5" />
-          </button>
           <button
             aria-label="Menú"
             className="lg:hidden text-navbar-foreground hover:text-primary transition-colors"

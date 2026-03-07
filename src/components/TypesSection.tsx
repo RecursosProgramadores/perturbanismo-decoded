@@ -2,9 +2,9 @@ import React from "react";
 import imgStructural from "../assets/tipos/ESTRUCTURAL.jpg";
 import imgVisual from "../assets/tipos/VISUAL.jpg";
 import imgCitizen from "../assets/tipos/ciudadano.jpg";
-import imgPsychological from "../assets/tipos/PSICOLOGICO.jpg";
-import imgInstitutional from "../assets/tipos/INSTITUCIONAL.jpg";
-import imgCultural from "../assets/tipos/CULTURAL.jpg";
+import imgPsychological from "../assets/tipos/PSICOLOGICO.jpeg";
+import imgInstitutional from "../assets/tipos/INSTITUCIONAL.jpeg";
+import imgCultural from "../assets/tipos/cultura.png";
 import imgVignette from "../assets/tipos/nacimiento.png";
 
 const types = [
@@ -184,27 +184,17 @@ const TypesSection = () => {
                 </div>
 
                 {type.subPoint && (
-                  <div className="mt-12 bg-white/70 border border-[#C41E3A]/10 p-1 lg:p-1 relative">
-                    <div className="flex flex-col md:flex-row gap-8 items-center bg-white p-8 shadow-inner">
-                      <div className="md:w-1/3 w-full">
-                        <img
-                          src={imgVignette}
-                          alt="3.1 Detalle"
-                          className="w-full h-auto grayscale-[0.5] contrast-125 border border-black/5"
-                        />
-                      </div>
-                      <div className="md:w-2/3 w-full">
-                        <h4 className="font-serif text-xl md:text-2xl font-bold text-slate-900 mb-4">
-                          <span className="text-[#C41E3A] text-sm font-sans block mb-1 uppercase tracking-widest">{type.subPoint.id}</span>
-                          {type.subPoint.title}
-                        </h4>
-                        <div className="space-y-3">
-                          {type.subPoint.content.map((p, i) => (
-                            <p key={i} className="text-slate-700 italic text-sm leading-relaxed border-l-2 border-[#C41E3A]/20 pl-4">
-                              {p}
-                            </p>
-                          ))}
-                        </div>
+                  <div className="mt-12 bg-white/70 border border-[#C41E3A]/10 p-1 relative">
+                    <div className="bg-white p-8 shadow-inner text-center">
+                      <h4 className="font-serif text-xl md:text-3xl font-bold text-slate-900 mb-6">
+                        {type.subPoint.title}
+                      </h4>
+                      <div className="space-y-4 max-w-3xl mx-auto">
+                        {type.subPoint.content.map((p, i) => (
+                          <p key={i} className="text-slate-700 italic text-base md:text-lg leading-relaxed border-l-2 border-[#C41E3A]/20 pl-4 inline-block text-left">
+                            {p}
+                          </p>
+                        ))}
                       </div>
                     </div>
                   </div>

@@ -1,12 +1,21 @@
-import React from 'react';
 import { Mail, MapPin, Globe, Instagram, Facebook } from 'lucide-react';
-import snopi from "../assets/snopi.png";
+import signatureImg from "@/assets/autora/signature.png";
+import bgContact from "@/assets/inicio/fondocontacto.png";
 
 const ContactSection = () => {
     return (
-        <section id="contacto" className="relative py-20 px-6 bg-[#f0f0f0] overflow-hidden min-h-screen flex flex-col items-center">
+        <section id="contacto" className="relative py-20 px-6 bg-[#fcfcfc] overflow-hidden min-h-screen flex flex-col items-center">
+            {/* Background Image Layer - Bottom Half Only */}
+            <div className="absolute inset-x-0 bottom-0 top-[50%] h-[50%] z-0">
+                <img
+                    src={bgContact}
+                    alt="Fondo Contacto"
+                    className="w-full h-full object-cover opacity-[0.1] grayscale mix-blend-multiply"
+                />
+            </div>
+
             {/* Texture Overlay (Recycled Paper Feel) */}
-            <div className="absolute inset-0 opacity-[0.03] pointer-events-none bg-[url('https://www.transparenttextures.com/patterns/recycled-paper.png')]" />
+            <div className="absolute inset-0 opacity-[0.05] pointer-events-none bg-[url('https://www.transparenttextures.com/patterns/recycled-paper.png')] z-[1]" />
 
             <div className="relative z-10 w-full max-w-5xl">
                 {/* Header Section */}
@@ -92,38 +101,21 @@ const ContactSection = () => {
                                     </li>
                                 </ul>
                             </div>
-
                             <p className="font-sans text-sm leading-relaxed max-w-sm text-gray-600">
                                 Perturbanismo está abierto a colaboraciones, entrevistas, poyeros, académicos y alianzas que promuevan la estética urbana.
                             </p>
-                        </div>
-
-                        {/* Illustration Area */}
-                        <div className="relative mt-20 md:mt-0 flex justify-end items-end group">
-                            <div className="relative w-72 h-72 flex items-end justify-end">
-                                {/* Background Shadow Cityscape */}
-                                <svg className="absolute bottom-4 right-0 w-full h-4/5 opacity-[0.15] pointer-events-none transition-opacity duration-500 group-hover:opacity-25" viewBox="0 0 200 150">
-                                    <path d="M0 150 L0 120 L20 120 L20 100 L40 100 L40 130 L60 130 L60 90 L80 90 L80 140 L120 140 L120 110 L150 110 L150 150 Z" fill="currentColor" />
-                                </svg>
-
-                                {/* Glow Effect */}
-                                <div className="absolute inset-0 bg-primary/5 rounded-full blur-3xl opacity-0 group-hover:opacity-100 transition-opacity duration-700"></div>
-
-                                <img
-                                    src={snopi}
-                                    alt="Snoopy"
-                                    className="relative z-10 w-64 h-auto object-contain drop-shadow-[10px_10px_0px_rgba(0,0,0,0.05)] group-hover:drop-shadow-[15px_15px_0px_rgba(196,30,58,0.1)] transition-all duration-300 group-hover:-translate-y-2"
-                                />
-                            </div>
                         </div>
                     </div>
                 </div>
 
                 {/* Footer Signature */}
-                <div className="mt-20 border-t border-black/10 pt-8 flex flex-col md:flex-row justify-between items-end gap-4">
-                    <div className="text-left">
-                        <p className="font-serif italic text-xl md:text-2xl text-black">Maria Alguadín Pantsa Peralta</p>
-                        <p className="font-sans text-xs uppercase tracking-widest font-bold text-gray-400">Arquitecta – Autora de Perturbanismo</p>
+                <div className="mt-20 border-t border-black/10 pt-8 flex flex-col md:flex-row justify-between items-end gap-4 text-left">
+                    <div>
+                        <img
+                            src={signatureImg}
+                            alt="Firma María Alejandra"
+                            className="h-16 md:h-20 w-auto object-contain mb-2 grayscale"
+                        />
                     </div>
                 </div>
             </div>

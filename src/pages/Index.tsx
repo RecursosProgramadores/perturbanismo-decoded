@@ -6,7 +6,6 @@ import BlogSection from "@/components/BlogSection";
 import GallerySection from "@/components/GallerySection";
 import ContactSection from "@/components/ContactSection";
 import Footer from "@/components/Footer";
-import TypesSection from "@/components/TypesSection";
 
 
 const Index = () => (
@@ -15,10 +14,6 @@ const Index = () => (
     <main>
       <HeroSection />
       <IntroSection />
-      <TypesSection />
-      <MusicSection />
-      <BlogSection />
-      <GallerySection />
       <ContactSection />
     </main>
     <Footer />

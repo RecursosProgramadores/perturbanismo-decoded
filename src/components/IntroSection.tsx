@@ -1,6 +1,6 @@
 import React from "react";
 import { Eye, Building2, Brain, Headphones } from "lucide-react";
-import heroImg from "@/assets/hero-watercolor.jpg";
+import heroImg from "@/assets/inicio/perturbanismo.png";
 
 const distortionCards = [
   {
@@ -48,9 +48,10 @@ const IntroSection = () => {
           </div>
         </div>
 
-        {/* Origin Section */}
-        <div className="flex flex-col lg:flex-row gap-12 items-center mb-32">
-          <div className="lg:w-1/2">
+        {/* origin Section: Image + 3 Context Points */}
+        <div className="flex flex-col lg:flex-row gap-16 items-start mb-16">
+          {/* Left: Image + Stylized List of Elements */}
+          <div className="lg:w-1/2 space-y-12 lg:sticky lg:top-24">
             <div className="relative">
               <div className="absolute -inset-4 border border-black/5 rounded-sm -rotate-1" />
               <img
@@ -58,28 +59,99 @@ const IntroSection = () => {
                 alt="Perturbanismo illustration"
                 className="relative z-10 w-full h-auto shadow-2xl grayscale-[0.2] contrast-110 rotate-1"
               />
-              <div className="absolute -bottom-6 -left-6 bg-[#C41E3A] text-white px-6 py-4 font-sans font-bold text-xs tracking-widest shadow-xl -rotate-2">
-                ORIGEN: CAJAMARCA, PERÚ
-              </div>
+              <div className="absolute -bottom-6 -right-6 w-32 h-32 bg-[#C41E3A]/5 rounded-full blur-2xl z-0" />
+            </div>
+
+            {/* Stylized List Callout */}
+            <div className="relative bg-white/40 p-8 border-l-4 border-[#C41E3A] shadow-sm backdrop-blur-sm">
+              <span className="block text-[#C41E3A] font-sans font-bold text-[10px] tracking-[0.3em] uppercase mb-4">Evidencias del caos</span>
+              <p className="font-serif text-lg text-slate-800 leading-relaxed italic">
+                Cables cruzando el cielo, fachadas inconclusas, ladrillo expuesto, carteles invasivos, postes mal ubicados, colores sin criterio, basura normalizada.
+              </p>
             </div>
           </div>
-          <div className="lg:w-1/2 space-y-6">
-            <p className="font-serif text-lg md:text-xl text-slate-800 leading-relaxed">
-              El término <strong>Perturbanismo</strong> surge de una observación profunda y dolorosa: la transformación desordenada de las ciudades, especialmente en aquellas donde la historia, el patrimonio y la identidad cultural han sido reemplazados por la improvisación.
-            </p>
-            <p className="font-serif text-lg text-slate-700 leading-relaxed">
-              No es una teoría más sobre el mal urbanismo; es un <strong>diagnóstico visual</strong> de la enfermedad estética contemporánea. Representa las acciones humanas —voluntarias o no— que generan una distorsión visual en el entorno urbano, rompiendo su coherencia, ritmo y belleza natural.
-            </p>
-            <div className="bg-white/30 backdrop-blur-sm border-l-4 border-[#C41E3A] p-6 mt-8 italic font-serif text-slate-700">
-              "Su raíz etimológica combina la palabra <strong>perturbar</strong> (alterar, desordenar, inquietar) con <strong>urbanismo</strong>. De esta unión nace un concepto que va más allá del simple descuido: el reflejo de una sociedad perturbada en sus valores."
+
+          {/* Right: Top 3 Points */}
+          <div className="lg:w-1/2 space-y-12">
+            {/* Definición directa */}
+            <div className="group">
+              <div className="flex items-center gap-4 mb-4">
+                <span className="text-[#C41E3A] font-sans font-bold text-xs tracking-[0.3em] uppercase">Definición directa</span>
+                <div className="h-px flex-1 bg-black/5" />
+              </div>
+              <p className="font-serif text-xl md:text-2xl text-slate-800 leading-tight mb-4">
+                <strong>El Perturbanismo</strong> es la acumulación de desorden visual en la ciudad.
+              </p>
+              <p className="font-serif text-lg text-slate-600 leading-relaxed">
+                Es aquello que rompe la armonía del entorno urbano y que, repetido todos los días, termina deformando la identidad de una ciudad.
+              </p>
+            </div>
+
+            {/* Qué no es */}
+            <div className="group">
+              <div className="flex items-center gap-4 mb-4">
+                <span className="text-[#C41E3A] font-sans font-bold text-xs tracking-[0.3em] uppercase">Qué no es</span>
+                <div className="h-px flex-1 bg-black/5" />
+              </div>
+              <p className="font-serif text-lg text-slate-800 leading-relaxed mb-4">
+                No es una teoría más sobre el mal urbanismo. Es un <strong>diagnóstico visual</strong> de una enfermedad estética contemporánea.
+              </p>
+              <p className="font-serif text-lg text-slate-700 leading-relaxed italic">
+                El Perturbanismo identifica una patología urbana silenciosa: la normalización del desorden como parte del paisaje cotidiano.
+              </p>
+              <p className="font-serif text-sm text-slate-600 mt-4 leading-relaxed">
+                Es la enfermedad que aparece cuando la improvisación reemplaza a la planificación, cuando el interés individual supera al bien común y cuando la estética deja de considerarse parte del desarrollo.
+              </p>
+            </div>
+
+            {/* Qué revela */}
+            <div className="group">
+              <div className="flex items-center gap-4 mb-4">
+                <span className="text-[#C41E3A] font-sans font-bold text-xs tracking-[0.3em] uppercase">Qué revela</span>
+                <div className="h-px flex-1 bg-black/5" />
+              </div>
+              <p className="font-serif text-lg text-slate-800 leading-relaxed">
+                El Perturbanismo no habla solo de edificios. Habla de cultura e indiferencia. Habla de la costumbre de aceptar el desorden como paisaje.
+              </p>
+              <p className="font-serif text-sm text-slate-600 italic mt-4">
+                Cada cable sin planificación, cada muro sin terminar, cada intervención sin criterio es una pequeña fractura en la imagen colectiva de la ciudad.
+              </p>
             </div>
           </div>
         </div>
 
-        {/* Definition Block */}
+        {/* Bottom Horizontal Row: Su origen & Por qué importa */}
+        <div className="grid md:grid-cols-2 gap-8 mb-32">
+          {/* Su origen */}
+          <div className="bg-slate-900 text-white p-8 md:p-12 rounded-sm shadow-2xl relative overflow-hidden group">
+            <div className="absolute top-0 right-0 w-32 h-32 bg-[#C41E3A] opacity-10 rounded-full blur-3xl -mr-16 -mt-16 group-hover:opacity-20 transition-opacity" />
+            <span className="block text-[#C41E3A] font-sans font-bold text-[10px] tracking-[0.3em] uppercase mb-6">Su origen</span>
+            <h4 className="font-serif text-2xl md:text-3xl mb-6">
+              La combinación de <strong>Perturbar</strong> (alterar, desordenar) y <strong>Urbanismo</strong>.
+            </h4>
+            <div className="h-px bg-white/10 w-24 mb-6" />
+            <p className="font-serif text-lg italic text-slate-300 leading-relaxed">
+              "Un concepto que va más allá del descuido: el reflejo de una sociedad que ha normalizado la distorsión."
+            </p>
+          </div>
+
+          {/* Por qué importa */}
+          <div className="bg-[#f9f5f0] p-8 md:p-12 border border-black/5 rounded-sm shadow-sm relative group">
+            <span className="block text-[#C41E3A] font-sans font-bold text-[10px] tracking-[0.3em] uppercase mb-6">Por qué importa</span>
+            <h4 className="font-serif text-2xl md:text-3xl text-slate-900 mb-6 italic">
+              "La ciudad no solo se habita. <span className="text-[#C41E3A]">La ciudad también educa</span>."
+            </h4>
+            <div className="h-px bg-black/5 w-24 mb-6" />
+            <p className="font-serif text-lg text-slate-700 leading-relaxed">
+              Cuando el desorden se vuelve paisaje, la distorsión se vuelve cultura. No busca condenar, busca despertar conciencia.
+            </p>
+          </div>
+        </div>
+
+        {/* RESTORED: Definition Block */}
         <div className="grid md:grid-cols-12 gap-12 items-center mb-32 bg-slate-900 text-white p-12 md:p-20 relative overflow-hidden">
           <div className="absolute top-0 right-0 w-64 h-64 bg-[#C41E3A] opacity-10 rounded-full blur-3xl -mr-32 -mt-32" />
-          <div className="md:col-span-7 relative z-10">
+          <div className="md:col-span-12 lg:col-span-7 relative z-10">
             <span className="block text-[#C41E3A] font-sans font-bold tracking-[0.3em] uppercase mb-6 text-sm">
               🟥 DEFINICIÓN
             </span>
@@ -94,14 +166,14 @@ const IntroSection = () => {
               ))}
             </ul>
           </div>
-          <div className="md:col-span-5 border-l border-white/10 pl-12 py-4">
+          <div className="md:col-span-12 lg:col-span-5 border-l border-white/10 pl-0 lg:pl-12 py-4">
             <p className="font-serif italic text-xl opacity-80 leading-relaxed">
               No es solo una ciudad "fea" o descuidada. Es una pérdida de coherencia que afecta directamente la forma en que las personas viven, sienten y habitan su ciudad.
             </p>
           </div>
         </div>
 
-        {/* Manifestations Grid */}
+        {/* RESTORED: Manifestations Grid */}
         <div className="mb-32">
           <h3 className="font-serif text-4xl text-center mb-16 uppercase tracking-tight">
             Un problema que se ve... <br />
@@ -126,7 +198,7 @@ const IntroSection = () => {
           </div>
         </div>
 
-        {/* Philosophy Section */}
+        {/* RESTORED: Philosophy Section */}
         <div className="mb-32">
           <div className="grid md:grid-cols-2 gap-8 lg:gap-12 items-stretch">
             {/* Card 1: Philosophy */}
